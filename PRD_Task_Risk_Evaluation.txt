@@ -1,0 +1,72 @@
+PRODUCT REQUIREMENT DOCUMENT (PRD)
+
+Nama Proyek: Task Management and Risk Evaluation Platform
+Bahasa Pengantar: Indonesian (Bahasa Indonesia)
+Format Dokumen: Plain Text (.txt)
+
+================================================================================
+1. RINGKASAN EKSEKUTIF (EXECUTIVE SUMMARY)
+================================================================================
+Aplikasi ini dirancang untuk memadukan fungsi manajemen tugas harian dengan
+modul evaluasi risiko dinamis. Pengguna dapat melacak daftar tugas berdasarkan
+skala prioritas sekaligus mengikuti kuesioner interaktif untuk menilai status
+evaluasi atau mitigasi risiko dari alur kerja mereka.
+
+================================================================================
+2. ALUR DAN STRUKTUR WIREFRAME (WIREFRAME FLOW & STRUCTURE)
+================================================================================
+Berdasarkan wireframe yang disediakan, aplikasi terbagi menjadi 4 layar utama:
+
+Layar 1: Dasbor Utama (List of Key and Values)
+  - Menampilkan ringkasan tugas aktif: Nama Tugas, Prioritas, & Tenggat Waktu.
+  - Tombol 'CREATE': Mengarahkan pengguna ke Layar 2.
+  - Tombol 'START': Mengarahkan pengguna ke Layar 3.
+
+Layar 2: Tambah Tugas (Create Task Form)
+  - Kolom 'TASK NAME': Input teks untuk nama tugas.
+  - Kolom 'PRIORITY': Dropdown/pilihan tingkat prioritas.
+  - Tombol 'ADD TASK TO LIST': Menyimpan data ke dasbor dan kembali ke Layar 1.
+
+Layar 3: Kuesioner Risiko (Key Question Form)
+  - Indikator 'PROGRESS': Menampilkan bilah persentase pengisian kuesioner.
+  - Komponen 'KEY QUESTION' & 'OPTION VALUE': Menampilkan pertanyaan dan opsi jawaban.
+  - Tombol 'SUBMIT': Mengirim jawaban dan membuka Layar 4.
+  - Tombol 'BACK TO HOME': Membatalkan proses dan kembali ke Layar 1.
+
+Layar 4: Hasil Analisis (Evaluation and Risk)
+  - Menampilkan visualisasi data atau status evaluasi akhir risiko.
+  - Tombol 'HOME': Navigasi kembali ke Layar 1.
+
+================================================================================
+3. SPESIFIKASI FUNGSIONAL & PERSYARATAN SISTEM (FUNCTIONAL REQUIREMENTS)
+================================================================================
+[FR-001] Manajemen Tugas (Task Management)
+  - Sistem harus mendukung penambahan tugas dengan parameter: Nama, Tingkat
+    Prioritas (High, Med, Low), dan Tanggal Jatuh Tempo (Due Date).
+  - Data yang berhasil ditambahkan melalui formulir harus langsung diperbarui
+    dan ditampilkan pada halaman Dasbor Utama secara real-time.
+
+[FR-002] Evaluasi dan Kuesioner Risiko (Risk Evaluation Module)
+  - Sistem harus mampu memuat pertanyaan evaluasi secara sekuensial.
+  - Bilah progres harus bergerak secara dinamis sesuai dengan jumlah pertanyaan
+    yang telah dijawab oleh pengguna.
+  - Sistem harus mengalkulasi skor atau bobot risiko dari 'OPTION VALUE' yang
+    dipilih setelah tombol 'SUBMIT' ditekan.
+
+[FR-003] Navigasi dan Aksesibilitas
+  - Transisi antarhalaman harus konsisten dan responsif.
+  - Tombol 'HOME' atau 'BACK TO HOME' harus membersihkan state kuesioner jika
+    proses pengisian belum selesai (sesuai konfirmasi pengguna).
+
+================================================================================
+4. KETENTUAN NON-FUNGSIONAL (NON-FUNCTIONAL REQUIREMENTS)
+================================================================================
+  - Kinerja: Waktu muat halaman formulir dan dasbor tidak boleh lebih dari 2 detik.
+  - Desain Konten: Menggunakan pendekatan minimalis, clean, dan fokus pada kejelasan
+    tipografi (seperti representasi grafis pada wireframe).
+  - Skalabilitas: Arsitektur basis data harus mendukung penambahan ribuan entri
+    tugas tanpa penurunan performa.
+
+================================================================================
+Akhir dari Dokumen PRD
+================================================================================

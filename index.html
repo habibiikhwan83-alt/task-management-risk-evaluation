@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management & Risk Evaluation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Screen 1: Dashboard -->
+        <div id="screen-dashboard" class="screen active">
+            <header class="header">
+                <h1>Dasbor Tugas</h1>
+            </header>
+            <main class="main-content">
+                <div class="task-list" id="taskList">
+                    <div class="empty-state" id="emptyState">
+                        <p>Belum ada tugas. Tambahkan tugas baru untuk memulai.</p>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="btnCreate">CREATE</button>
+                    <button class="btn btn-secondary" id="btnStart">START</button>
+                </div>
+            </main>
+        </div>
+
+        <!-- Screen 2: Create Task Form -->
+        <div id="screen-create" class="screen">
+            <header class="header">
+                <h1>Tambah Tugas</h1>
+                <button class="btn-back" id="btnBackFromCreate">← Kembali</button>
+            </header>
+            <main class="main-content">
+                <form id="createTaskForm" class="form">
+                    <div class="form-group">
+                        <label for="taskName">NAMA TUGAS</label>
+                        <input type="text" id="taskName" name="taskName" placeholder="Masukkan nama tugas" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskPriority">PRIORITAS</label>
+                        <select id="taskPriority" name="taskPriority" required>
+                            <option value="">Pilih prioritas</option>
+                            <option value="High">High</option>
+                            <option value="Med">Med</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskDueDate">TENGGAT WAKTU</label>
+                        <input type="date" id="taskDueDate" name="taskDueDate" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">ADD TASK TO LIST</button>
+                </form>
+            </main>
+        </div>
+
+        <!-- Screen 3: Risk Questionnaire -->
+        <div id="screen-questionnaire" class="screen">
+            <header class="header">
+                <h1>Kuesioner Risiko</h1>
+                <button class="btn-back" id="btnBackFromQuestionnaire">← Kembali</button>
+            </header>
+            <main class="main-content">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">0%</span>
+                </div>
+                <div class="question-container" id="questionContainer">
+                    <!-- Questions will be rendered here -->
+                </div>
+                <div class="questionnaire-actions">
+                    <button class="btn btn-secondary" id="btnBackHome">BACK TO HOME</button>
+                    <button class="btn btn-primary" id="btnSubmit">SUBMIT</button>
+                </div>
+            </main>
+        </div>
+
+        <!-- Screen 4: Evaluation Results -->
+        <div id="screen-results" class="screen">
+            <header class="header">
+                <h1>Hasil Analisis</h1>
+            </header>
+            <main class="main-content">
+                <div class="results-container" id="resultsContainer">
+                    <!-- Results will be rendered here -->
+                </div>
+                <div class="results-actions">
+                    <button class="btn btn-primary" id="btnHome">HOME</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Konfirmasi</h3>
+            <p id="modalMessage">Apakah Anda yakin ingin keluar? Progres kuesioner akan hilang.</p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="modalCancel">Batal</button>
+                <button class="btn btn-primary" id="modalConfirm">Ya, Keluar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
